@@ -1,17 +1,17 @@
 ---
-- include: debian/pkg.yml
+- include_tasks: debian/pkg.yml
   tags: monit_pkg
   when: ansible_os_family == "Debian"
 
-- include: redhat/pkg.yml
+- include_tasks: redhat/pkg.yml
   tags: monit_pkg
   when: ansible_os_family == "RedHat"
 
-- include: config.yml
+- include_tasks: config.yml
   tags: monit_config
 
-- include: monitors.yml
+- include_tasks: monitors.yml
   tags: monit_monitors
 
-- include: service.yml
+- include_tasks: service.yml
   tags: monit_service
